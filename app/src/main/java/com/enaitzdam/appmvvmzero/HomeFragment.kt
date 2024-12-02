@@ -23,12 +23,15 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater)
 
-        binding.viewContainer.setOnClickListener {
-            viewModel.randomQuote()
-            binding.tvQuote.text = viewModel.frase
-            binding.tvAuthor.text = viewModel.autor
-        }
+        val homeViewModel = HomeViewModel()
 
+        binding.button.setOnClickListener{
+            val input = binding.inputEdat.text.toString()
+            val numero = input.toInt()
+            val totalAlumnes = homeViewModel.countAlumnes(numero)
+
+            binding.totalALumnes.setText("Total d'alumnes amb aquesta edat: " + totalAlumnes)
+        }
 
         return binding.root
 

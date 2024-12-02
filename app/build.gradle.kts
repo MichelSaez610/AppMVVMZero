@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.enaitzdam.appmvvmzero"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.enaitzdam.appmvvmzero"
         minSdk = 26
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -34,9 +34,10 @@ android {
         jvmTarget = "1.8"
     }
 
-    buildFeatures {
-        dataBinding = true
+    dataBinding {
+        enable = true
     }
+    
 }
 
 dependencies {
